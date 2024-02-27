@@ -1,5 +1,5 @@
 # A Better Admin Program for SAP Datasphere
-![ABAP for Datasphere (341 x 318)](https://github.com/kostertim87/ABetterAdminProgramforDatasphere/assets/50547693/70bde847-d531-4862-a8b6-e3d8ea6a4fe3)
+![ABAP for Datasphere (341 x 318)](https://github.com/kostertim87/A-Better-Admin-Program-for-Datasphere/assets/50547693/2d901eb1-3687-4500-871a-180607ea828a)
 
 # Introduction to A Better Admin Program for SAP Datasphere
 
