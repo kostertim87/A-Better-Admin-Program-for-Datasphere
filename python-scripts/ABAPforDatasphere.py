@@ -20,7 +20,7 @@ import pytz
 import datetime
 import openpyxl
 import matplotlib.figure as Figure
-
+from icon import icon
 
 
 ## Global variables
@@ -38,8 +38,6 @@ removal_list = []
 cleaned_spaces = []
 combined_multiple_user_info = []
 current_wd = os.path.dirname(os.path.realpath(__file__))
-icon_file = r"\ABAPforDatasphere.ico"
-icon_path = current_wd + icon_file
 logged_in = 'Not logged in'
 dev_views = []
 cross_temp_list_prod = ['Please add views to transport']
@@ -179,7 +177,7 @@ layout = [
 ]
 
 window = sg.Window(f'A Better Admin Program for Datasphere -- {logged_in}', layout, grab_anywhere=False, resizable=True, finalize=True, 
-				   icon=icon_path, titlebar_icon=icon_path, size=size)
+				   icon=icon, titlebar_icon=icon, size=size)
 
 window1 = window
 window2 = None
