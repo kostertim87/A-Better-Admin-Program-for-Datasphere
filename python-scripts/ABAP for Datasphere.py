@@ -1,11 +1,13 @@
 # -----------------------------------------------------------
 # Package import
 # -----------------------------------------------------------
+import os
+os.environ['PySimpleGUI_license'] = 'ehyBJjMbaLWiNlljbLn3Nll5VBHGluwZZUShIs6rIfkRRWpccZ36RxyKaHWBJa16dyGwlbvObIixItsHIok8xZpFYD2EVXuZcB2NVKJGRoC0Ir6LM4TDc6wLOXTGEjwLNRjZYO0vOwCAwTinTqGGljjXZYWL5uztZgUSR9lacPGkx0vNeyWe1LlFbAnkRwWyZ9XUJDzlaUWq9xuQI5jHofiPN5SH4mwxIfiMwkixTqmZFBtDZOUbZxpWcsn2Nf0sIojjoxi1VZGNlMtsICiawBiWTjmVFEtdZRUSxVhsce3TQuiHO4iNJ6L0bj3xNX0rZqXeIPiqL9CdJWDab62i19wWYBWN5k5VI5j7ogibS5W05200ZhXDJokfb52bJRzeIhi4w5icQF30VUz2dfGx9ttlZvXFJxJ6R3CvIr6hIsjZIux3Njzgg0iPLLCjJSEYY6XVRjlQSRXHNlzadSWKVSkKIRjgoQiVMpjkA7yKNhCk0cwKMoid08ySOCC1I0shInksRlhIdNGfVPF3e1HXBHpXcOmAVRzlISjCo2iJMrjLAoyhNVSX0SwnMriS07xyNRivIvsrIVk3VwtGYYWUlHshQoWaRkkUc6mpVzzhcOyTIn6CIkn8RHpSb6SG5Cr4bF3CNh0xZPXqJUAAafWF5T0HZKXHJykAbO27JjzWLrmL5KsRILigwkizSKVQBuBLZUGARNyIZiX0NEzPItjVoPioNDzzcSuOMHTacKxILBjsEVwgMeSv4YygMWTGUvi8fnQv=h=M447800b1ae8f333f0912ed4e8fd6d555d3e0516232f5fff3f938afc075961665df27d4e8f40376584e279145feb07fe7476f18a1e38c73bba31b04c442225e83d745dd1327ff31ccd716a289bf79e3ec30203b77dcd02f38c51a57e6f250120fc9ceac4385386bf9bde2657ee86a1afff9994d16df96e277ccacb79f18bf9523c2dedd972726c20be13bc2486de35cdf374c53683ae71ed14f71cff4febec637c069f148d9d3e5f4d8bc640a1d0170f0b413cd50e72c32cb96ac91accbe8ee768912c3f74fffa4ddd63ee9d0d984c4ea5fb7bafb69c213a7629376244afda7730f0b520b7289d92e046cda6321294c4e899e9cc7e5e432b6240b71f1943de2c317a919a348196527cb48700abc6b58099aca511b1428d4d6616551afd2aa4c3fc6ac422bfff779b40aab7c28555763ace65580a7e7ec0670370b9a7e4da256f0174a5fe238006959ca2f97fffc6c42deb0706645af01e928007a81b79c9edf31c66d2f1d4dff58c56d028342765ab4c79a071f548ac01bc8e1c9dcc864e9c193ffde58af2fe1a354b2ce17d3ef171df9b67f9e3880959634fe8aba7049170c9823a60d95d52d64a527134627acc87ea08a101da78ed855bc2b227d067d000bad488a9d1050ae1353277f1a26f7f643efc3d447edd0018b9ff94bcbcfde6414ba9bd640e1da8d95126dd5e00f96dac6f691819ddace456920f48b0e78e1fea9d6'
+import PySimpleGUI as sg
 import subprocess # For OS commands on DSP CLI
 import json # For handling the CSN files which are in JSON format
 import time # For wait function to let an object deploy finish before starting the following
 import csv
-import PySimpleGUI as sg
 import os.path
 import abap_functions as af
 from hdbcli import dbapi # To connect to SAP HANA Database underneath SAP Datasphere to fetch Remote Table metadata
@@ -37,7 +39,7 @@ removal_list = []
 cleaned_spaces = []
 file_spaces = r'C:/tmp/spaces.json'
 combined_multiple_user_info = []
-icon_path = 'ABAP for Datasphere.ico'
+icon_path = r"C:\Users\koste\OneDrive\A Better Admin Program for Datasphere\python-scripts\ABAP for Datasphere.ico"
 logged_in = 'Not logged in'
 dev_views = []
 cross_temp_list_prod = ['Please add views to transport']
@@ -88,12 +90,11 @@ monitor_tab = [
 ## TAB 3 -- Space Management
 
 performance_monitor_tab = [
-  	[sg.Text('Processor Overview')], 
-    [sg.Text('Data is refreshed every 10 seconds in database'), 
+  	[sg.Text('Data is refreshed every 10 seconds in database'), 
 	 sg.Text('                                                                                                                                                                                                               '),
 	 sg.Text('Show the last'), sg.InputText(key='-TIME-', size=(10, 1)), sg.Text('minutes')],
-	[sg.Frame("CPU Usage", [[canvas_cpu]], size=(700,500), element_justification='left', title_location=sg.TITLE_LOCATION_TOP), 
-  		sg.Frame("Memory Usage", [[canvas_memory]], size=(700,500), element_justification='left', title_location=sg.TITLE_LOCATION_TOP)],
+	[sg.Frame("CPU Usage", [[canvas_cpu]], size=(700,530), element_justification='left', title_location=sg.TITLE_LOCATION_TOP), 
+  		sg.Frame("Memory Usage", [[canvas_memory]], size=(700,530), element_justification='left', title_location=sg.TITLE_LOCATION_TOP)],
 	[sg.Button('Refresh', key='-TAB3_REFRESH-')],	
 ]
 
