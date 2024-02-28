@@ -137,7 +137,7 @@ def add_new_window():
     
     layout = [
         [sg.Text('Profile', justification='left'), sg.Push(), sg.Input(key='-ID-', size=INPUT_SIZE, justification='left') ],
-        [sg.Text('DataSpehere Host Name (Database User)'), sg.Push(), sg.Input(key='-URL-', size=INPUT_SIZE)],
+        [sg.Text('DataSphere Host Name (Database User)'), sg.Push(), sg.Input(key='-URL-', size=INPUT_SIZE)],
         [sg.Text('Database User'), sg.Push(), sg.InputText(key='-DBUSER-', size=INPUT_SIZE)],
         [sg.Text('Database User Password'), sg.Push(), sg.InputText(key='-DBPASSWORD-', password_char='*' ,size=INPUT_SIZE)],
         [sg.Text('DataSphere URL'), sg.Push(), sg.InputText(key='-DSURL-', size=INPUT_SIZE)],
