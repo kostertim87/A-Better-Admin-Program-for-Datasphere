@@ -155,7 +155,7 @@ def create_new_secrets_file_window():
     layout = [
         [sg.Text('Filename', justification='left'), sg.Push(), sg.Input(key='-FILENAME-', size=INPUT_SIZE, justification='left') ],
         [sg.Text('Client ID', justification='left'), sg.Push(), sg.Input(key='-CLIENT_ID-', size=INPUT_SIZE, justification='left') ],
-        [sg.Text('Client Secret'), sg.Push(), sg.Input(key='-CLIENT_SECRET-', size=INPUT_SIZE)],
+        [sg.Text('Client Secret'), sg.Push(), sg.Input(key='-CLIENT_SECRET-', password_char='*', size=INPUT_SIZE)],
         [sg.Text('Authorization URL'), sg.Push(), sg.InputText(key='-AUTH_URL-', size=INPUT_SIZE)],
         [sg.Text('Token URL'), sg.Push(), sg.InputText(key='-TOKEN_URL-', size=INPUT_SIZE)],
         [sg.Text('Folder to store file'), sg.Push(), sg.InputText(key='-FOLDER-', size=INPUT_SIZE), sg.FolderBrowse()],
